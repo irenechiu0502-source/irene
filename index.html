@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>純境研萃 PureFlora Lab | 敏弱肌純素精簡養膚彩妝</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #8E7060;
+      --primary-light: #F4EBE4;
+      --accent: #6E8574;
+      --accent-light: #EBF1ED;
+      --bg-cream: #FAF7F2;
+      --bg-white: #FFFFFF;
+      --text-main: #2C2623;
+      --text-muted: #6B625D;
+      --border-color: #E6DDD5;
+      --shadow-sm: 0 4px 12px rgba(110, 80, 60, 0.05);
+      --shadow-md: 0 8px 24px rgba(110, 80, 60, 0.08);
+      --shadow-lg: 0 16px 36px rgba(110, 80, 60, 0.12);
+      --radius-sm: 10px;
+      --radius-md: 18px;
+      --radius-lg: 28px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-cream);
+      color: var(--text-main);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .serif-font {
+      font-family: 'Noto Serif TC', serif;
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(250, 247, 242, 0.92);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border-color);
+      padding: 16px 0;
+      transition: all 0.3s ease;
+    }
+    .nav-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .brand-logo {
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: var(--text-main);
+    }
+    .brand-logo .logo-main {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--primary);
+      font-family: 'Noto Serif TC', serif;
+    }
+    .brand-logo .logo-sub {
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+    }
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      list-style: none;
+      align-items: center;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 14px;
+      font-weight: 500;
+      transition: color 0.2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    .btn-nav {
+      background: var(--primary);
+      color: #fff !important;
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 13px;
+      transition: transform 0.2s, background 0.2s !important;
+    }
+    .btn-nav:hover {
+      background: #73594b !important;
+      transform: translateY(-1px);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 80px 0 60px;
+      text-align: center;
+      position: relative;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--accent-light);
+      color: var(--accent);
+      padding: 6px 16px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      letter-spacing: 0.5px;
+    }
+    .hero-title {
+      font-size: 42px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 20px;
+      color: var(--text-main);
+    }
+    .hero-title span {
+      color: var(--primary);
+      position: relative;
+    }
+    .hero-desc {
+      font-size: 18px;
+      color: var(--text-muted);
+      max-width: 680px;
+      margin: 0 auto 36px;
+      font-weight: 300;
+    }
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 50px;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      text-decoration: none;
+      padding: 14px 32px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 15px;
+      box-shadow: 0 4px 16px rgba(142, 112, 96, 0.25);
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #73594b;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(142, 112, 96, 0.35);
+    }
+    .btn-secondary {
+      background: transparent;
+      color: var(--primary);
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 99px;
+      font-weight: 600;
+      font-size: 15px;
+      border: 1px solid var(--primary);
+      transition: all 0.2s ease;
+    }
+    .btn-secondary:hover {
+      background: var(--primary-light);
+    }
+
+    /* Trust Pillars */
+    .trust-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: var(--bg-white);
+      padding: 24px 32px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--border-color);
+      margin-bottom: 80px;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-align: left;
+    }
+    .trust-icon {
+      font-size: 26px;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--primary-light);
+      border-radius: 12px;
+      flex-shrink: 0;
+    }
+    .trust-title {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--text-main);
+    }
+    .trust-sub {
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    /* Academic Planning Showcase */
+    .section {
+      padding: 70px 0;
+    }
+    .section-header {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
+    .section-tag {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+      display: block;
+    }
+    .section-title {
+      font-size: 32px;
+      margin-bottom: 14px;
+      color: var(--text-main);
+    }
+    .section-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+    }
+
+    /* Card Styles */
+    .card {
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      padding: 28px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+    .card-badge {
+      display: inline-block;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+    .badge-primary { background: var(--primary-light); color: var(--primary); }
+    .badge-accent { background: var(--accent-light); color: var(--accent); }
+    .badge-dark { background: #EFEBE7; color: #4A403A; }
+
+    .card-title {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: var(--text-main);
+    }
+    .card-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      line-height: 1.65;
+    }
+
+    /* Product Section */
+    .product-card {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+    .product-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-lg);
+    }
+    .product-img-box {
+      height: 240px;
+      background: linear-gradient(135deg, #F5ECE6 0%, #E8E0D8 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+    .product-img-emoji {
+      font-size: 72px;
+      filter: drop-shadow(0 8px 16px rgba(0,0,0,0.08));
+    }
+    .product-tag-pill {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 4px 12px;
+      border-radius: 99px;
+      font-size: 11px;
+      font-weight: 600;
+      color: var(--primary);
+    }
+    .product-body {
+      padding: 24px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .product-name {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+    .product-spec {
+      font-size: 12px;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
+    .product-desc {
+      font-size: 13.5px;
+      color: var(--text-muted);
+      line-height: 1.6;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .product-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--border-color);
+      padding-top: 16px;
+    }
+    .product-price {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .product-price span {
+      font-size: 12px;
+      color: var(--text-muted);
+      font-weight: 400;
+    }
+    .btn-buy {
+      background: var(--text-main);
+      color: white;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 99px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn-buy:hover {
+      background: var(--primary);
+    }
+
+    /* Bundle Box */
+    .bundle-banner {
+      background: linear-gradient(135deg, #FAF2EB 0%, #EFE5DD 100%);
+      border: 1px dashed var(--primary);
+      border-radius: var(--radius-md);
+      padding: 32px;
+      margin-top: 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .bundle-info h4 {
+      font-size: 20px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+    .bundle-info p {
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    .bundle-pricing {
+      text-align: right;
+    }
+    .bundle-original {
+      font-size: 13px;
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+    .bundle-special {
+      font-size: 26px;
+      font-weight: 700;
+      color: #B24C3D;
+    }
+
+    /* Pre-order & Form Section */
+    .order-section {
+      background: var(--bg-white);
+      border-radius: var(--radius-lg);
+      padding: 50px;
+      border: 1px solid var(--border-color);
+      box-shadow: var(--shadow-md);
+      margin-top: 50px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-main);
+    }
+    .form-control {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius-sm);
+      font-size: 14px;
+      background: var(--bg-cream);
+      font-family: inherit;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      background: #fff;
+    }
+    .form-select-boxes {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    .select-card {
+      border: 1px solid var(--border-color);
+      padding: 12px;
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+      font-size: 13px;
+      text-align: center;
+      transition: all 0.2s;
+    }
+    .select-card.active {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      font-weight: 600;
+      color: var(--primary);
+    }
+
+    /* Academic Footer */
+    footer {
+      background: #25201D;
+      color: #A0948D;
+      padding: 60px 0 30px;
+      margin-top: 100px;
+      font-size: 13px;
+    }
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid #38312D;
+      padding-bottom: 40px;
+      margin-bottom: 30px;
+    }
+    .footer-brand h5 {
+      color: #FFFFFF;
+      font-size: 18px;
+      font-family: 'Noto Serif TC', serif;
+      margin-bottom: 8px;
+    }
+    .footer-meta {
+      text-align: right;
+      line-height: 1.8;
+    }
+    .copyright {
+      text-align: center;
+      font-size: 12px;
+      color: #7A6F68;
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .trust-bar { grid-template-columns: repeat(2, 1fr); }
+      .grid-3 { grid-template-columns: 1fr; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .form-select-boxes { grid-template-columns: 1fr; }
+      .bundle-banner { flex-direction: column; text-align: center; gap: 20px; }
+      .bundle-pricing { text-align: center; }
+      .footer-content { flex-direction: column; gap: 30px; text-align: center; }
+      .footer-meta { text-align: center; }
+      .hero-title { font-size: 32px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <nav>
+    <div class="container nav-inner">
+      <a href="#" class="brand-logo">
+        <span class="logo-main">純境研萃</span>
+        <span class="logo-sub">PureFlora Lab</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="#about">品牌初衷</a></li>
+        <li><a href="#analysis">學理企劃</a></li>
+        <li><a href="#products">明星產品</a></li>
+        <li><a href="#order" class="btn-nav">免費索取試用</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero container">
+    <div class="hero-badge">🌿 Clean Beauty 敏弱肌專屬純素微光美學</div>
+    <h1 class="hero-title">給肌膚會呼吸的<span>乾淨微光</span></h1>
+    <p class="hero-desc">告別繁複上妝與化學負擔。純境研萃堅持 100% 純素無動物實驗、0% 酒精香精，以溫和植萃與天然物理礦物，實現 3 分鐘自然潤色與洗面乳輕鬆卸除。</p>
+    <div class="hero-actions">
+      <a href="#products" class="btn-primary">探索明星單品</a>
+      <a href="#order" class="btn-secondary">預約 7 天純素試用包</a>
+    </div>
+
+    <!-- Trust Pillars -->
+    <div class="trust-bar">
+      <div class="trust-item">
+        <div class="trust-icon">🌱</div>
+        <div>
+          <div class="trust-title">100% 純素認證</div>
+          <div class="trust-sub">無動物成分與零殘忍</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">🛡️</div>
+        <div>
+          <div class="trust-title">敏弱肌友善配方</div>
+          <div class="trust-sub">無酒精 / 人工香精 / 礦物油</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">💧</div>
+        <div>
+          <div class="trust-title">洗面乳即可卸除</div>
+          <div class="trust-sub">免用卸妝油，不悶痘</div>
+        </div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-icon">📦</div>
+        <div>
+          <div class="trust-title">全台常溫超取 60 元</div>
+          <div class="trust-sub">零冷鏈負擔，48hr 快速到店</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Section 1: 品牌初衷與痛點 -->
+  <section class="section container" id="about">
+    <div class="section-header">
+      <span class="section-tag">Problem & Motivation</span>
+      <h2 class="section-title">為什麼我們創立《純境研萃》？</h2>
+      <p class="section-subtitle">針對現代女性化妝的三大不可承受之重，微型創業者精準切入的純淨解方</p>
+    </div>
+
+    <div class="grid-3">
+      <div class="card">
+        <span class="card-badge badge-primary">痛點 01</span>
+        <h3 class="card-title">市售彩妝化學負擔過重</h3>
+        <p class="card-desc">市售底妝常添加高劑量防腐劑、人工香精與石化界面活性劑，敏感肌女性往往「化妝後泛紅乾癢、卸妝後膚況更糟」，苦尋不著真正純淨的日常彩妝。</p>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-accent">痛點 02</span>
+        <h3 class="card-title">專櫃價格昂貴且過度包裝</h3>
+        <p class="card-desc">國際大牌動輒數千元，成本多耗費於明星代言與厚重包裝。微型創業者透過常溫輕量化包裝與在地小批量合規生技廠合作，讓純素高品質美妝回歸親民價位。</p>
+      </div>
+      <div class="card">
+        <span class="card-badge badge-dark">痛點 03</span>
+        <h3 class="card-title">繁瑣上妝步驟與疲憊感</h3>
+        <p class="card-desc">十道疊擦上妝不僅容易浮粉厚重，更讓晨間通勤手忙腳亂。我們以「保養型素顏修護＋微米礦物柔焦」，打造 3 分鐘搞定的極簡自然呼吸妝容。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 2: 學理企劃架構 PESTC & SWOT -->
+  <section class="section container" id="analysis">
+    <div class="section-header">
+      <span class="section-tag">Marketing Planning Matrix</span>
+      <h2 class="section-title">行銷企劃學理深度分析</h2>
+      <p class="section-subtitle">落實 PESTC 總體環境掃描與 SWOT 因果推論四部曲，構築微型創業核心競爭力</p>
+    </div>
+
+    <div class="grid-2">
+      <!-- PESTC 摘要 -->
+      <div class="card">
+        <span class="card-badge badge-accent">PESTC 總體環境掃描</span>
+        <h3 class="card-title" style="margin-bottom: 16px;">外部趨勢與微型創業機會</h3>
+        <ul style="list-style: none; font-size: 13.5px; color: var(--text-muted); line-height: 1.8;">
+          <li>⚖️ <strong>政治法律 (P)</strong>：台灣化粧品 PIF 登錄制推行，透明全成分化法規為品牌信任優勢。</li>
+          <li>💄 <strong>經濟環境 (E)</strong>：通膨催生「口紅效應」，百元級輕奢美妝＋60元超取具極高抗跌性。</li>
+          <li>🌱 <strong>社會文化 (S)</strong>：Clean Beauty 純素與動物友善意識盛行，年輕族群偏好「偽素顏」。</li>
+          <li>🔬 <strong>科技創新 (T)</strong>：天然微米雲母與植萃封存技術成熟，小批量客製生產品質穩定。</li>
+          <li>♻️ <strong>綠色環保 (C)</strong>：全配方生物可分解，採用輕量化鋁罐減塑，呼應 ESG 綠色消費。</li>
+        </ul>
+      </div>
+
+      <!-- SWOT 策略四部曲 -->
+      <div class="card">
+        <span class="card-badge badge-primary">SWOT 因果推論四部曲</span>
+        <h3 class="card-title" style="margin-bottom: 16px;">策略因果交叉推論</h3>
+        <ul style="list-style: none; font-size: 13.5px; color: var(--text-muted); line-height: 1.8;">
+          <li>🚀 <strong>SO 積極開拓</strong>：乘 Clean Beauty 熱潮，以「3 分鐘素顏挑戰」短影音迅速切入校園與小資女性。</li>
+          <li>🔄 <strong>WO 借力補強</strong>：以「每週新鮮限量出爐」預訂制，將微型產能小轉化為純淨無防腐劑之稀缺優勢。</li>
+          <li>🛡️ <strong>ST 防禦轉化</strong>：面對專櫃巨頭宣傳，主動公開 SGS 無重金屬報告與全配方，築起信任防禦牆。</li>
+          <li>🎯 <strong>WT 避險聚焦</strong>：嚴控開模成本與庫存，聚焦素顏霜與蜜粉 2 大高回購明星品，維持正現金流。</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 3: 4P 產品展示櫥窗 -->
+  <section class="section container" id="products">
+    <div class="section-header">
+      <span class="section-tag">4P Product Showcase</span>
+      <h2 class="section-title">純境研萃 · 明星單品推薦</h2>
+      <p class="section-subtitle">專為敏弱肌研發，全系列使用植物來源角鯊烷、積雪草精萃與天然礦物色粉</p>
+    </div>
+
+    <div class="grid-3">
+      <!-- 產品 1 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <div class="product-tag-pill">明星首選</div>
+          <div class="product-img-emoji">🧴</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">積雪草舒敏微光潤色素顏霜</h3>
+          <div class="product-spec">容量 30ml | 物理防護 SPF25 | 洗面乳可卸</div>
+          <p class="product-desc">富含 85% 植萃修護精華，水感絲滑質地，一抹均勻修飾暗沉泛紅，呈現天生好膚質般透亮微光。</p>
+          <div class="product-footer">
+            <div class="product-price">NT$ 420 <span>/ 瓶</span></div>
+            <button class="btn-buy" onclick="selectProduct('素顏霜')">選擇</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 產品 2 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <div class="product-tag-pill">控油柔焦</div>
+          <div class="product-img-emoji">✨</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">輕羽透感天然純礦物柔焦蜜粉</h3>
+          <div class="product-spec">容量 8g | 0 滑石粉 | 天然微米雲母</div>
+          <p class="product-desc">純天然微米礦物研磨粉體，吸附多餘油脂而不帶走肌膚水分，撫平毛孔，全日保持透氣清爽霧光。</p>
+          <div class="product-footer">
+            <div class="product-price">NT$ 360 <span>/ 盒</span></div>
+            <button class="btn-buy" onclick="selectProduct('礦物蜜粉')">選擇</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 產品 3 -->
+      <div class="product-card">
+        <div class="product-img-box">
+          <div class="product-tag-pill">自然氣色</div>
+          <div class="product-img-emoji">💄</div>
+        </div>
+        <div class="product-body">
+          <h3 class="product-name">晨露潤澤植萃精油潤色護唇膏</h3>
+          <div class="product-spec">容量 3.5g | 有機乳木果油 | 天竺葵精油</div>
+          <p class="product-desc">無石化礦物油、無人工色素。天然紅石榴萃取礦物潤粉，深層滋潤唇紋，賦予雙唇初生嬰兒般粉嫩水光。</p>
+          <div class="product-footer">
+            <div class="product-price">NT$ 220 <span>/ 支</span></div>
+            <button class="btn-buy" onclick="selectProduct('潤色護唇膏')">選擇</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 超值特惠組 -->
+    <div class="bundle-banner">
+      <div class="bundle-info">
+        <h4>🌟 期中特推：純境微光三件經典體驗組</h4>
+        <p>內含：素顏霜 30ml + 礦物蜜粉 8g + 精油潤唇膏 3.5g，加贈「敏弱肌 7 天膚況打卡卡片」與全台常溫超取免運！</p>
+      </div>
+      <div class="bundle-pricing">
+        <div class="bundle-original">原價 NT$ 1,000</div>
+        <div class="bundle-special">特惠價 NT$ 888</div>
+        <button class="btn-primary" style="padding: 10px 24px; font-size: 13.5px; margin-top: 8px;" onclick="selectProduct('三件經典組')">立即登記體驗</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Section 4: 預購與試用索取表單 -->
+  <section class="section container" id="order">
+    <div class="order-section">
+      <div class="section-header" style="margin-bottom: 30px;">
+        <span class="section-tag">MVP Interactive Validation</span>
+        <h2 class="section-title">線上預購與免費試用包索取</h2>
+        <p class="section-subtitle">每人限領一份「7 天純素素顏霜體驗包（只需自付常溫超取 60 元）」</p>
+      </div>
+
+      <form id="preorderForm" onsubmit="handleFormSubmit(event)" style="max-width: 650px; margin: 0 auto;">
+        <div class="form-group">
+          <label>選擇預購品項或試用品</label>
+          <div class="form-select-boxes">
+            <div class="select-card active" onclick="setFormItem(this, '7天素顏霜試用包 (自付運費60元)')">
+              🎁 7天素顏霜試用包<br><small style="color: var(--text-muted);">免產品費 / 超取 60</small>
+            </div>
+            <div class="select-card" onclick="setFormItem(this, '積雪草潤色素顏霜 (NT$ 420)')">
+              🧴 潤色素顏霜<br><small style="color: var(--text-muted);">NT$ 420</small>
+            </div>
+            <div class="select-card" onclick="setFormItem(this, '微光三件體驗組 (特惠 NT$ 888)')">
+              🌟 三件體驗組<br><small style="color: var(--text-muted);">特惠 NT$ 888 (免運)</small>
+            </div>
+          </div>
+          <input type="hidden" id="selectedItem" value="7天素顏霜試用包 (自付運費60元)">
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="userName">真實姓名</label>
+            <input type="text" id="userName" class="form-control" placeholder="例：王小美" required>
+          </div>
+          <div class="form-group">
+            <label for="userPhone">聯絡手機</label>
+            <input type="tel" id="userPhone" class="form-control" placeholder="例：0912-345-678" required>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="userAddress">超商取貨門市 (7-11 或全家門市名稱)</label>
+          <input type="text" id="userAddress" class="form-control" placeholder="例：7-11 萬能門市 / 全家大園航站店" required>
+        </div>
+
+        <div class="form-group">
+          <label for="userSkin">個人膚質備註（幫助我們為您客製保養建議）</label>
+          <select id="userSkin" class="form-control">
+            <option>敏弱泛紅肌</option>
+            <option>混合偏乾肌</option>
+            <option>油性痘痘肌</option>
+            <option>一般中性肌</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn-primary" style="width: 100%; padding: 16px; font-size: 16px; margin-top: 10px;">
+          送出預購 / 試用索取意向
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <h5>純境研萃 PureFlora Lab</h5>
+          <p>敏弱肌專屬 · Clean Beauty 純素精簡養膚彩妝</p>
+          <p style="margin-top: 8px; font-size: 12px; color: #8F827A;">全配方符合衛福部化粧品登錄規範 | 零殘忍 Cruelty-Free 倡議</p>
+        </div>
+        <div class="footer-meta">
+          <p><strong>萬能科技大學《創意發想與實踐》期中專案</strong></p>
+          <p>授課教師：邱俊維 博士 | 教學地點：G104 多媒體教室</p>
+          <p>雲端託管：GitHub Pages 零伺服器靜態架構</p>
+        </div>
+      </div>
+      <div class="copyright">
+        © 2026 純境研萃 PureFlora Lab. 本網站為大學行銷企劃與微型創業課程之示範原型 (MVP) 成果展示。
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    function selectProduct(productName) {
+      const orderSection = document.getElementById('order');
+      orderSection.scrollIntoView({ behavior: 'smooth' });
+      alert(`已為您選取：${productName}！請填寫下方超取資料完成預購意向登記。`);
+    }
+
+    function setFormItem(el, itemName) {
+      document.querySelectorAll('.select-card').forEach(card => card.classList.remove('active'));
+      el.classList.add('active');
+      document.getElementById('selectedItem').value = itemName;
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const name = document.getElementById('userName').value;
+      const item = document.getElementById('selectedItem').value;
+      const store = document.getElementById('userAddress').value;
+      alert(`感謝 ${name} 同學/顧客！\n\n您所登記的【${item}】已成功記錄！\n預計於 48 小時內配送至：${store}。\n此為微型創業 MVP 測試表單，資料已順利暫存。`);
+      document.getElementById('preorderForm').reset();
+    }
+  </script>
+</body>
+</html>
